@@ -3,8 +3,43 @@
 {% block title %}Home - Gunjan Rajak{% endblock %}
 
 {% block content %}
-<div class="home-content">
-    <h2>Welcome to My Portfolio</h2>
-    <p>Please navigate to the <a href="{% url 'skills' %}">Skills</a> page to see my skills.</p>
+  <!-- hero section -->
+  <div class="hero">
+    <div class="hero-info">
+        <h2>Hi, I'm <br>Gunjan Rajak</h2>
+        <h3>I'm a fullstack developer</h3>
+        <p>Hi, I'm Gunjan, a passionate full-stack developer with expertise in React for front-end development and Django for the back end. I enjoy crafting user-friendly interfaces, optimizing back-end systems, and continuously learning new technologies to improve my skills.</p>
+        <div class="buttons">
+            <button class="btn1">Hire me</button>
+            <ul class="ul-icons">
+                <li><a href=""><i class="bx bxl-github"></i></a></li>
+                <li><a href=""><i class="bx bxl-twitter"></i></a></li>
+                <li><a href=""><i class="bx bxl-youtube"></i></a></li>
+                <li><a href=""><i class="bx bxl-facebook-circle"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div  class="hero-img ">
+        <img src="image/me.png" alt="person-image">
+    </div>
+</div>
+
+<div class="info-sec ">
+    <div class="info-card">
+        <h2>x+</h2>
+        <p>Years of <br> Experience</p>
+    </div>
+    <div class="info-card">
+        <h2>3+</h2>
+        <p>Technical <br> Skills</p>
+    </div>
+    <div class="info-card">
+        <h2>10+</h2>
+        <p>Projects <br> Completed</p>
+    </div>
+    <div class="info-card">
+        <h2>x+</h2>
+        <p>Satisfied <br> Clients</p>
+    </div>
 </div>
 {% endblock %}
