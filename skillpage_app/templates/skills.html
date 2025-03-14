@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Skills - Gunjan Rajak{% endblock %}
+
+{% block content %}
+<div class="skills-content">
+    <h2 style="font-size: clamp(32px, 5vw, 48px); margin-bottom: 20px;">My Skills</h2>
+    
+    {% if user.is_authenticated %}
+    <div class="admin-controls">
+        <a href="{% url 'skill-create' %}" class="btn btn-primary">Add New Skill</a>
+        <a href="{% url 'category-create' %}" class="btn btn-secondary">Add New Category</a>
+    </div>
+    {% endif %}
+    
+    <div class="skills-grid">
+        {% for category in categories %}
+        <div class="skill-category">
+            <h3>{{ category.name }}</h3>
+            {% for skill in category.skills.all %}
+            <div class="skill-bar">
+                <div class="skill-info">
+                    <span>{{ skill.name }}</span>
+                    <span>{{ skill.proficiency }}%</span>
+                    
+                    {% if user.is_authenticated %}
+                    <div class="skill-actions">
+                        <a href="{% url 'skill-update' skill.id %}" class="btn-edit"><i class='bx bx-edit'></i></a>
+                        <a href="{% url 'skill-delete' skill.id %}" class="btn-delete"><i class='bx bx-trash'></i></a>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: {{ skill.proficiency }}%">
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

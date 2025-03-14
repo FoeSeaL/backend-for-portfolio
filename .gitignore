@@ -1,0 +1,23 @@
+# Byte-compiled / cached
+__pycache__/
+*.py[cod]
+*.swp
+*.swo
+
+# Virtual environment
+venv/
+env/
+
+# Database files
+*.sqlite3
+
+# Media and static files (optional)
+media/
+staticfiles/
+
+# Secret settings (optional)
+.env
+*.pem
+
+# Django migration cache
+*/migrations/__pycache__/
