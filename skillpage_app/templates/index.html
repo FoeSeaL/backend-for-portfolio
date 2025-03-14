@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block title %}Home - Gunjan Rajak{% endblock %}
 
@@ -20,7 +22,8 @@
         </div>
     </div>
     <div  class="hero-img ">
-        <img src="image/me.png" alt="person-image">
+        <img src="{% static 'image/me.png' %}" alt="Description of image">
+
     </div>
 </div>
 

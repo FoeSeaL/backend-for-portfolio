@@ -106,11 +106,15 @@
 }
 
 .form-container {
-    background-color: rgba(15, 15, 15, 0.7);
-    padding: 25px;
-    border-radius: 10px;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
+    text-align: center;
+    background: rgba(74, 207, 238, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #4acfee;
+    transition: 0.3s;
+    color: white;
 }
 
 .form-group {
@@ -160,6 +164,7 @@
     border-radius: 15px;
     border: 1px solid #4acfee;
     transition: 0.3s;
+    color: white;
 }
 
 .delete-confirmation p {
