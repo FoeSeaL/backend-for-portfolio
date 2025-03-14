@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Gunjan Rajak{% endblock %}</title>
-    <link rel="stylesheet" href="/static/css/skills-page.css">
     <link rel="stylesheet" href="/static/css/background.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skills-page.css">
+    <link rel="stylesheet" href="/static/css/about-page.css">
+    <link rel="stylesheet" href="/static/css/project-page.css">
+    <link rel="stylesheet" href="/static/css/contact-page.css">
 </head>
 <body>
     <div class="galaxy-background"></div>
@@ -16,11 +19,11 @@
         <nav>
             <h1><span style="color: #4ace;">Gunjan</span>Rajak</h1>
             <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="about-page.html">About</a></li>
-                <li><a href="project-page.html">Project</a></li>
-                <li><a class="{% if 'skills' in request.path %}active{% endif %}" href="{% url 'skills' %}">Skills</a></li>
-                <li><a href="contact-page.html">Contact</a></li>
+                <li><a class="active"  href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'project' %}">Project</a></li>
+                <li><a href="{% url 'skills' %}">Skills</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
         </nav>
 

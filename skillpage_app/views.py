@@ -3,10 +3,46 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Skill, SkillCategory
 from .forms import SkillForm, SkillCategoryForm
+from django.views.generic import TemplateView
 
 # Home view
 def home(request):
     return render(request, 'index.html')
+
+
+# About View
+class AboutView(TemplateView):
+    template_name = 'about-page.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # You can add any context data you need for the about page here
+        # For example:
+        # context['page_title'] = 'About Me'
+        return context
+
+# Project View
+class ProjectView(TemplateView):
+    template_name = 'project-page.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # You can add any context data you need for the project page here
+        # For example:
+        # context['projects'] = Project.objects.all()  # If you have a Project model
+        return context
+
+# Contact View
+class ContactView(TemplateView):
+    template_name = 'contact-page.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # You can add any context data you need for the contact page here
+        # For example:
+        # context['contact_email'] = 'your@email.com'
+        return context
+
 
 # Skills List View
 class SkillsListView(ListView):
