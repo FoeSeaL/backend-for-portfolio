@@ -7,7 +7,9 @@ from django.views.generic import TemplateView
 
 # Home view
 def home(request):
-    return render(request, 'index.html')
+    context = {'page_name': 'home'}
+    return render(request, 'index.html', context)
+
 
 
 # About View
@@ -16,10 +18,9 @@ class AboutView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # You can add any context data you need for the about page here
-        # For example:
-        # context['page_title'] = 'About Me'
+        context['page_name'] = 'about'
         return context
+    
 
 # Project View
 class ProjectView(TemplateView):
@@ -27,9 +28,7 @@ class ProjectView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # You can add any context data you need for the project page here
-        # For example:
-        # context['projects'] = Project.objects.all()  # If you have a Project model
+        context['page_name'] = 'project'
         return context
 
 # Contact View
@@ -38,9 +37,7 @@ class ContactView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # You can add any context data you need for the contact page here
-        # For example:
-        # context['contact_email'] = 'your@email.com'
+        context['page_name'] = 'contact'
         return context
 
 
@@ -53,6 +50,7 @@ class SkillsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['skills'] = Skill.objects.all()
+        context['page_name'] = 'skills'
         return context
 
 # Skill Create View

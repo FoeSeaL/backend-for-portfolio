@@ -19,11 +19,11 @@
         <nav>
             <h1><span style="color: #4ace;">Gunjan</span>Rajak</h1>
             <ul>
-                <li><a class="active"  href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'project' %}">Project</a></li>
-                <li><a href="{% url 'skills' %}">Skills</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a {% if page_name == 'home' %}class="active"{% endif %} href="{% url 'home' %}">Home</a></li>
+                <li><a {% if page_name == 'about' %}class="active"{% endif %} href="{% url 'about' %}">About</a></li>
+                <li><a {% if page_name == 'project' %}class="active"{% endif %} href="{% url 'project' %}">Project</a></li>
+                <li><a {% if page_name == 'skills' %}class="active"{% endif %} href="{% url 'skills' %}">Skills</a></li>
+                <li><a {% if page_name == 'contact' %}class="active"{% endif %} href="{% url 'contact' %}">Contact</a></li>
             </ul>
         </nav>
 
